@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "d71b15da-499c-47bc-a323-244ed3aae6db",
+		"name": "Task Api Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13555201"
+	},
+	"item": [
+		{
+			"name": "Listar tarefas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar tarefa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Aprender Laravel\",\n  \"description\": \"Estudar os conceitos básicos de Laravel e construir uma API.\",\n  \"status\": false\n}"
+				},
+				"url": "http://localhost:8000/api/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Exibir uma tarefa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Aprender Laravel\",\n  \"description\": \"Estudar os conceitos básicos de Laravel e construir uma API.\",\n  \"status\": false\n}"
+				},
+				"url": "http://localhost:8000/api/tasks/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar uma tarefa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Aprender Laravel Avançado - Editado\",\n  \"description\": \"Editado - Estudar conceitos avançados de Laravel, incluindo Eloquent e Middleware.\",\n  \"status\": true\n}"
+				},
+				"url": "http://localhost:8000/api/tasks/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar parcialmente uma tarefa",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": false\n}"
+				},
+				"url": "http://localhost:8000/api/tasks/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar uma tarefa",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:8000/api/tasks/1"
+			},
+			"response": []
+		}
+	]
+}
