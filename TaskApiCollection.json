@@ -10,7 +10,8 @@
 			"name": "Listar tarefas",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+                "url": "http://localhost:8000/api/tasks/"
 			},
 			"response": []
 		},
@@ -23,7 +24,12 @@
 						"key": "Content-Type",
 						"value": "application/json",
 						"type": "text"
-					}
+					},
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
 				],
 				"body": {
 					"mode": "raw",
@@ -64,7 +70,12 @@
 						"key": "Content-Type",
 						"value": "application/json",
 						"type": "text"
-					}
+					},
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
 				],
 				"body": {
 					"mode": "raw",
