@@ -34,8 +34,13 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Task $task)
+    public function show(int $task)
     {
+        $task = Task::find($task);
+        if (empty($task)) {
+            return response()->json('Task not found', 404);
+        }
+
         return response()->json($task);
     }
 
@@ -65,6 +70,6 @@ class TaskController extends Controller
             return response()->json('Task not found', 404);
         }
         $task->delete();
-        return response()->json(null, 204);
+        return response()->json('Task deleted successfully!', 204);
     }
 }
